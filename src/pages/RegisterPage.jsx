@@ -62,7 +62,7 @@ const RegisterPage = () => {
             setErrorState(errors);
             if (errors)
                 return;
-            delete inputState.repeatPassword;
+            delete inputState.repeat_password;
             await axios.post("/users/register", inputState);
             navigate(ROUTES.LOGIN);
             toast.success(`Welcome ${inputState.name} to Card Match!`);

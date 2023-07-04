@@ -113,7 +113,7 @@ const initializeUserFields = {
     },
     zip: {
         label: "Zip",
-        name: "zip",
+        name: "zipCode",
         type: "text",
         sm: 4,
         required: false,
