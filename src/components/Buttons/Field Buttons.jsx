@@ -5,7 +5,7 @@ import SignUpButton from "./Sign Up Button";
 import { Grid } from "@mui/material";
 
 
-const FieldButtons = (onRefreshClick, onRegisterClick) => {
+const FieldButtons = ({onRefreshClick, onRegisterClick}) => {
     
     const handleRefreshClick = (event) => {
         onRefreshClick(event);
