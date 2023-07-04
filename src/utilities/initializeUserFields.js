@@ -47,9 +47,9 @@ const initializeUserFields = {
         required: true,
         value:"",
     },
-    repeatPassword: {
+    repeat_password: {
         label: "Repeat Password",
-        name: "repeatPassword",
+        name: "repeat_password",
         type: "password",
         sm: 6,
         required: true,
@@ -111,7 +111,7 @@ const initializeUserFields = {
         required: true,
         value:"",
     },
-    zip: {
+    zipCode: {
         label: "Zip",
         name: "zipCode",
         type: "text",
