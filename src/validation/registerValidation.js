@@ -21,7 +21,7 @@ const registerSchema = Joi.object({
       "string.empty": 'Password cannot be empty.',
       "any.required": 'Password is required.',
     }),
-  repeat_password: Joi.ref('password'),
+  // repeat_password: Joi.ref('password'),
   // repeat_password: Joi.valid(userData.password).messages({
   //   "any.only": "The two passwords do not match",
   //   "any.required": "Please re-enter the password",
@@ -36,7 +36,8 @@ const registerSchema = Joi.object({
   houseNumber: Joi.string().min(1).max(100).required(),
   zipCode: Joi.number().integer().positive().min(1).max(99999999).allow(""),
   biz: Joi.bool().required(),
-}).with('password', 'repeat_password');
+});
+// .with('password', 'repeat_password');
 
 
 const validateRegisterSchema = (userInput) =>
