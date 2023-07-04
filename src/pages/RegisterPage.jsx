@@ -41,7 +41,7 @@ const RegisterPage = () => {
     const handleInputChange = (event) => {
         //This makes a deep copy of the previous state
         let newInputState = JSON.parse(JSON.stringify(inputState));
-        console.log(event)
+        // console.log(event)
         // this copies the newstate at the id of the event to the previous state 
         newInputState[event.target.id] = event.target.value;
         // this updates the new state with the updated state
@@ -59,10 +59,10 @@ const RegisterPage = () => {
             setShowErrors(true);
             const errors = validateRegisterSchema(inputState);
             console.log("Validation Error: ", errors);
+            delete inputState.repeat_password;
             setErrorState(errors);
             if (errors)
                 return;
-            delete inputState.repeat_password;
             await axios.post("/users/register", inputState);
             navigate(ROUTES.LOGIN);
             toast.success(`Welcome ${inputState.name} to Card Match!`);
