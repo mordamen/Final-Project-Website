@@ -36,8 +36,7 @@ const registerSchema = Joi.object({
   houseNumber: Joi.string().min(1).max(100).required(),
   zipCode: Joi.number().integer().positive().min(1).max(99999999).allow(""),
   biz: Joi.bool().required(),
-})
-.with('password', 'repeat_password');
+}).with('password', 'repeat_password');
 
 
 const validateRegisterSchema = (userInput) =>
