@@ -59,10 +59,10 @@ const RegisterPage = () => {
             setShowErrors(true);
             const errors = validateRegisterSchema(inputState);
             console.log("Validation Error: ", errors);
-            delete inputState.repeatPassword;
             setErrorState(errors);
             if (errors)
                 return;
+            delete inputState.repeatPassword;
             await axios.post("/users/register", inputState);
             navigate(ROUTES.LOGIN);
             toast.success(`Welcome ${inputState.name} to Card Match!`);
