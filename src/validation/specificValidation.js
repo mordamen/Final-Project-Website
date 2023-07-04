@@ -5,7 +5,7 @@ const validateFieldFromSchema = (schema, userInput, userFieldId) => {
     const fieldSchema = schema.extract(userFieldId);
 
     const validationRes = validation(fieldSchema, userInput);
-    console.log('userFieldId is: ', userFieldId);
+    // console.log('userFieldId is: ', userFieldId);
     let returnVal;
     
     if(validationRes){

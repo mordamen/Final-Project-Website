@@ -59,8 +59,8 @@ const RegisterPage = () => {
             setShowErrors(true);
             const errors = validateRegisterSchema(inputState);
             console.log("Validation Error: ", errors);
-            delete inputState.repeat_password;
             setErrorState(errors);
+            delete inputState.repeat_password;
             if (errors)
                 return;
             await axios.post("/users/register", inputState);
