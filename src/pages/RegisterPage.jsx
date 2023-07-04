@@ -57,7 +57,7 @@ const RegisterPage = () => {
     const handleRegisterClick = async (event) => {
         try {
             setShowErrors(true);
-            delete inputState.repeat_password;
+            // delete inputState.repeat_password;
             const errors = validateRegisterSchema(inputState);
             console.log("Validation Error: ", errors);
             setErrorState(errors);
