@@ -2,7 +2,7 @@ import Joi from "joi";
 import validation from "./validation";
 import validateFieldFromSchema from "./specificValidation";
 
-const registerSchema = Joi.object({
+const cardSchema = Joi.object({
   title: Joi.string().min(2).max(256).required(),
   subTitle: Joi.string().min(2).max(256).required(),
   description: Joi.string().min(2).max(1024).required(),
@@ -24,10 +24,10 @@ const registerSchema = Joi.object({
 });
 
 const validateCardSchema = (userInput) =>
-  validation(registerSchema, userInput);
+  validation(cardSchema, userInput);
 
 const validateCardFieldFromSchema = (userInput, userFieldId) => {
-  return (validateFieldFromSchema(registerSchema, userInput, userFieldId));
+  return (validateFieldFromSchema(cardSchema, userInput, userFieldId));
 }
 
 export default validateCardFieldFromSchema;
