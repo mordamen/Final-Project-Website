@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
 import Typography from '@mui/material/Typography'
-import { validateRegisterSchema } from "../../validation/registerValidation";
+import { validateRegisterSchema } from "../../validation/userValidation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

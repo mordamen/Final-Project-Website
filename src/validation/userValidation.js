@@ -2,7 +2,7 @@ import Joi from "joi";
 import validation from "./validation";
 import validateFieldFromSchema from "./specificValidation";
 
-const registerSchema = Joi.object({
+const userSchema = Joi.object({
   firstName: Joi.string().alphanum().min(2).max(100).required(),
   middleName: Joi.string().alphanum().min(2).max(100).allow("").required(),
   lastName: Joi.string().alphanum().min(2).max(100).required(),
@@ -39,12 +39,12 @@ const registerSchema = Joi.object({
 });
 
 const validateRegisterSchema = (userInput) =>
-  validation(registerSchema, userInput);
+  validation(userSchema, userInput);
 
 const validateRegisterFieldFromSchema = (userInput, userFieldId) => {
-  return (validateFieldFromSchema(registerSchema, userInput, userFieldId));
+  return (validateFieldFromSchema(userSchema, userInput, userFieldId));
 }
 
 export default validateRegisterFieldFromSchema;
 
-export {validateRegisterSchema, registerSchema};
+export {validateRegisterSchema, userSchema};

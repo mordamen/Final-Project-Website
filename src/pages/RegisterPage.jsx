@@ -5,7 +5,7 @@ import axios from "axios";
 
 import ROUTES from "../routes/ROUTES";
 import initialUserInputState from "../utilities/initialUserInputState";
-import validateRegisterFieldFromSchema, { validateRegisterSchema } from "../validation/registerValidation";
+import validateRegisterFieldFromSchema, { validateRegisterSchema } from "../validation/userValidation";
 import TextBlocks from "../components/General Components/Text Blocks";
 import FieldButtons from "../components/Buttons/Field Buttons";
 
