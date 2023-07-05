@@ -16,16 +16,16 @@ const registerSchema = Joi.object({
     .min(6)
     .max(20)
     .required()
+    .label('Password')
     .messages({
       "string.pattern.base": 'The password must be at least 6 characters long and contain at least one lowercase letter, one uppercase letter, one digit, and one special character.',
       "string.empty": 'Password cannot be empty.',
       "any.required": 'Password is required.',
     }),
-  // repeat_password: Joi.ref('password'),
-  // repeat_password: Joi.valid(userData.password).messages({
-  //   "any.only": "The two passwords do not match",
-  //   "any.required": "Please re-enter the password",
-  //   }),
+  repeat_password: Joi.any().equal(Joi.ref('password'))
+    .required()
+    .label('Confirm password')
+    .messages({ 'any.only': '{{#label}} does not match' }),
   phone: Joi.string().min(9).max(12).required(),
   country: Joi.string().min(6).max(100),
   imageUrl: Joi.string().min(6).max(100).allow(""),
@@ -34,28 +34,12 @@ const registerSchema = Joi.object({
   city: Joi.string().min(2).max(100).required(),
   street: Joi.string().min(2).max(100).required(),
   houseNumber: Joi.string().min(1).max(100).required(),
-  zipCode: Joi.number().integer().positive().min(1).max(99999999).allow(""),
+  zipCode: Joi.number().integer().positive().min(1).max(99999999),
   biz: Joi.bool().required(),
 });
-// .with('password', 'repeat_password');
-
 
 const validateRegisterSchema = (userInput) =>
   validation(registerSchema, userInput);
-
-const validateRegisterField = (name, value) => {
-    const obj = {
-        [name]: value
-    };
-    const fieldSchema = {
-        [name]: registerSchema[name]
-    };
-    //return result
-    const result = registerSchema.validate(obj);
-    console.log('errorState is:', result)
-    // result.error === null -> valid
-    return result;
-}
 
 const validateRegisterFieldFromSchema = (userInput, userFieldId) => {
   return (validateFieldFromSchema(registerSchema, userInput, userFieldId));
@@ -63,4 +47,4 @@ const validateRegisterFieldFromSchema = (userInput, userFieldId) => {
 
 export default validateRegisterFieldFromSchema;
 
-export {validateRegisterSchema, validateRegisterField, registerSchema};
+export {validateRegisterSchema, registerSchema};

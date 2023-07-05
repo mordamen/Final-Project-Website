@@ -47,6 +47,14 @@ const initializeUserFields = {
         required: true,
         value:"",
     },
+    repeat_password: {
+        label: "Repeat Password",
+        name: "repeat_password",
+        type: "password",
+        sm: 6,
+        required: true,
+        value:"",
+    },
     imageAlt: {
         label: "Image Alt",
         name: "imageAlt",
@@ -112,14 +120,5 @@ const initializeUserFields = {
         value:"",
     },
 };
-
-// repeat_password: {
-//         label: "Repeat Password",
-//         name: "repeat_password",
-//         type: "password",
-//         sm: 6,
-//         required: true,
-//         value:"",
-//     },
 
 export default initializeUserFields;

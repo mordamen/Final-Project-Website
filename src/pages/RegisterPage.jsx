@@ -54,19 +54,19 @@ const RegisterPage = () => {
     };
 
     // This function handles the changes whenever the user clicks on the register button
+    // This function handles the changes whenever the user clicks on the register button
     const handleRegisterClick = async (event) => {
         try {
             setShowErrors(true);
-            // delete inputState.repeat_password;
             const errors = validateRegisterSchema(inputState);
             console.log("Validation Error: ", errors);
             setErrorState(errors);
-            
             if (errors)
                 return;
+            delete inputState.repeat_password;
             await axios.post("/users/register", inputState);
             navigate(ROUTES.LOGIN);
-            toast.success(`Welcome ${inputState.name} to Card Match!`);
+            toast.success(`Welcome ${inputState.firstName} to Card Match!`);
         } catch (error) {
             console.log("error from axios", error.response.data);
             toast.error("Error trying to regsiter user");
