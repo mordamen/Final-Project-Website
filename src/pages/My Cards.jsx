@@ -69,9 +69,10 @@ const HomePage = () => {
                 <Typography sx={{color: 'text.primary'}} > Welcome to the "My Cards" page, your personal gallery of stunning business cards! Here, you can proudly showcase the collection of business cards you have personally created. Each card represents your unique brand, creativity, and professionalism. Whether you're an entrepreneur, freelancer, or aspiring professional, this is your space to shine. Browse through your carefully crafted designs, admire the intricate details, and share your business card masterpieces with the world. From bold and modern to elegant and sophisticated, your creativity knows no bounds. Embrace the power of a great first impression as you present your exceptional cards to potential clients, partners, and colleagues. Start exploring your collection and unleash the full potential of your personal brand on the "My Cards" page!
                 </Typography> 
             </Container>
-            <Container maxWidth='false' sx={{ display: "flex", m:'auto', height: 1}}>
+            {!cardsArr? "" : 
+            <Container maxWidth='false' component='section' className='cards-showcase second panel' sx={{ display: "flex"}}>
                 <CardGallery cardsArr={cardsArr} setCardsArr={setCardsArr} payload={payload} />
-        </Container>
+            </Container>}
         </Fragment>
         
     );

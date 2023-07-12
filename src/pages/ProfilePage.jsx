@@ -12,7 +12,7 @@ import useLoggedIn from '../hooks/useLoggedIn';
 import TextBlocks from '../components/General Components/Text Blocks';
 import initializeUserFields from '../utilities/initializeUserFields';
 import initialUserInputState from '../utilities/initialUserInputState';
-import validateRegisterFieldFromSchema, { validateRegisterSchema } from '../validation/registerValidation';
+import validateRegisterFieldFromSchema, { validateRegisterSchema } from '../validation/userValidation';
 import FieldButtons from '../components/Buttons/Field Buttons';
 import { Paper } from '@mui/material';
 
